@@ -3,9 +3,8 @@
 #include "asset.hpp"
 #include <iostream>
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
+namespace pac
+{
 Texture::Texture(const char *file): m_Filepath(file)
 {
     std::ifstream input(file, std::ios::binary | std::ios::ate);
@@ -63,4 +62,6 @@ void Texture::deserialize(std::ifstream &in)
     m_RawData = stbi_load_from_memory((const stbi_uc *)m_Data, m_FileSize, &m_Width, &m_Height, &m_Channels, 0);
     std::cout << "Loaded Image: " << "size: " << m_FileSize << " bytes\n";
     std::cout << "Loaded Image: " << "raw_size: " << get_raw_size() << " bytes\n";
+}
+
 }

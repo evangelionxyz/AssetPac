@@ -7,6 +7,9 @@
 #include <cstring>
 
 #include "asset.hpp"
+#include "asset_packer.hpp"
+
+using namespace pac;
 
 const char HEADER[4] = {'O', 'R', 'G', 'N'};
 const char AUTHOR[4] = {'E', 'V', 'A', 'N'};
@@ -90,7 +93,8 @@ int show_hint()
     std::cout << "deserializing: -d <asset_pack.bin>\n";
     return -1;
 }
-int main(int argc, char **argv)
+
+int test_1(int argc, char **argv)
 {
     std::vector<std::unique_ptr<Asset>> assets;
 
@@ -132,6 +136,26 @@ int main(int argc, char **argv)
             deserialize("game_data.bin", assets);
         }
     }
+
+    return 0;
+}
+
+int main(int argc, char **argv)
+{
+    std::cout << "Hello World\n";
+    AssetPackerCreateInfo create_info;
+    create_info.headers = {
+        "ORIGIN",
+        "EVANGELION",
+        1,
+        'A',
+        0.1,
+        0.1f,
+        false
+    };
+
+    AssetPacker asset_packer(create_info);
+    asset_packer.serialize("file.bin");
 
     return 0;
 }

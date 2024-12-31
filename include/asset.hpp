@@ -1,15 +1,14 @@
-// Copyright (c) Evangelion Manuhutu
+// Copyright (c) Evangelion Manuhutu 2024
 
 #pragma once
 #include <fstream>
 #include <stdint.h>
 #include "stb_image.h"
 
-enum AssetType : uint16_t
+#include "asset_type.hpp"
+
+namespace pac
 {
-    Image = 0,
-    Audio
-};
 
 class Asset
 {
@@ -48,3 +47,5 @@ private:
     unsigned char *m_RawData = nullptr;
     int m_Width = 0, m_Height = 0, m_Channels = 0;
 };
+
+}

@@ -51,6 +51,23 @@
         "xmemory": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "list": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp",
+        "array": "cpp",
+        "coroutine": "cpp",
+        "map": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "xtree": "cpp",
+        "any": "cpp"
     }
 }
